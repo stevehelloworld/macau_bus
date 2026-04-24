@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳門發財巴互動地圖 | Macau Casino Shuttle Map</title>
+  <meta name="description" content="澳門免費穿梭巴士(發財巴)互動地圖 — 查看所有酒店、賭場、度假村的免費接駁巴士路線">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="app-header">
+    <div class="header-content">
+      <div class="logo-area">
+        <span class="logo-icon">🎰</span>
+        <div>
+          <h1>澳門發財巴互動地圖</h1>
+          <p class="subtitle">Macau Free Casino Shuttle Bus Map</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-toggle-sidebar" class="icon-btn" title="切換側欄">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div id="app-container">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="open">
+      <!-- Search -->
+      <div class="sidebar-search">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="search-input" placeholder="搜尋酒店 / 賭場..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">全部</button>
+        <button class="filter-tab" data-filter="peninsula">澳門半島</button>
+        <button class="filter-tab" data-filter="cotai">路氹城</button>
+        <button class="filter-tab" data-filter="hub">交通樞紐</button>
+      </div>
+
+      <!-- Legend -->
+      <div class="sidebar-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#e74c3c"></span>交通樞紐</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f39c12"></span>澳門半島</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#9b59b6"></span>路氹城</div>
+      </div>
+
+      <!-- Location List -->
+      <div id="location-list" class="location-list"></div>
+
+      <!-- Tips Section -->
+      <div class="sidebar-tips">
+        <h3>💡 使用小貼士</h3>
+        <ul>
+          <li>大部分發財巴<strong>免費</strong>，無需住客證明</li>
+          <li>尖峰時段每 <strong>5-15 分鐘</strong>一班</li>
+          <li>營運時間通常為 <strong>09:00 - 23:00</strong></li>
+          <li>點擊地圖上的標記查看詳細路線</li>
+          <li>點擊路線按鈕可在地圖上顯示連線</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Map -->
+    <div id="map-container">
+      <div id="map"></div>
+      <!-- Route Info Overlay -->
+      <div id="route-overlay" class="hidden">
+        <button id="close-route-overlay" class="close-btn">&times;</button>
+        <div id="route-overlay-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
