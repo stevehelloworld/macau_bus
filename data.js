@@ -65,7 +65,7 @@ const LOCATIONS = [
     routes: ['border_gate','hzmb','hengqin','outer_harbour','taipa_ferry','airport'],
     routeColor: '#c9a84c', operator: '金沙中國 Sands' },
 
-  { id: 'parisian',           name: '澳門巴黎人',              nameEn: 'The Parisian Macao',                 lat: 22.1436, lng: 113.5658, icon: '🗼', type: 'cotai', desc: '巴黎鐵塔複製品為地標，金沙集團旗下',
+  { id: 'parisian',           name: '澳門巴黎人',              nameEn: 'The Parisian Macao',                 lat: 22.1436, lng: 113.5616, icon: '🗼', type: 'cotai', desc: '巴黎鐵塔複製品為地標，金沙集團旗下',
     routes: ['border_gate','hzmb','hengqin','outer_harbour','taipa_ferry','airport'],
     routeColor: '#c9a84c', operator: '金沙中國 Sands' },
 
@@ -73,11 +73,11 @@ const LOCATIONS = [
     routes: ['border_gate','hzmb','outer_harbour','taipa_ferry','airport'],
     routeColor: '#c9a84c', operator: '金沙中國 Sands' },
 
-  { id: 'galaxy_macau',       name: '澳門銀河',               nameEn: 'Galaxy Macau',                       lat: 22.1481, lng: 113.5577, icon: '🎰', type: 'cotai', desc: '世界級綜合度假城，天浪淘園聞名',
+  { id: 'galaxy_macau',       name: '澳門銀河',               nameEn: 'Galaxy Macau',                       lat: 22.1493, lng: 113.5554, icon: '🎰', type: 'cotai', desc: '世界級綜合度假城，天浪淘園聞名',
     routes: ['border_gate','hzmb','hengqin','outer_harbour','taipa_ferry','airport','starworld'],
     routeColor: '#f39c12', operator: '銀河娛樂 Galaxy' },
 
-  { id: 'broadway',           name: '澳門百老匯',              nameEn: 'Broadway Macau',                     lat: 22.1420, lng: 113.5504, icon: '🎭', type: 'cotai', desc: '銀河旗下，主打美食街與劇場',
+  { id: 'broadway',           name: '澳門百老匯',              nameEn: 'Broadway Macau',                     lat: 22.1466, lng: 113.5516, icon: '🎭', type: 'cotai', desc: '銀河旗下，主打美食街與劇場',
     routes: ['border_gate','galaxy_macau'],
     routeColor: '#f39c12', operator: '銀河娛樂 Galaxy' },
 
