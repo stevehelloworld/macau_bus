@@ -199,26 +199,7 @@ body {
 }
 .route-show-btn:hover { transform: scale(1.03); box-shadow: 0 4px 20px var(--accent-glow); }
 
-/* ========== Leaflet Overrides ========== */
-.leaflet-popup-content-wrapper {
-  background: rgba(13,18,32,.95) !important;
-  border: 1px solid rgba(201,168,76,.25) !important;
-  border-radius: 12px !important; color: var(--text) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,.5) !important;
-  backdrop-filter: blur(12px);
-}
-.leaflet-popup-tip { background: rgba(13,18,32,.95) !important; }
-.leaflet-popup-content { margin: 14px 16px !important; font-family: 'Noto Sans TC','Inter',sans-serif !important; }
-.popup-title { font-size: 15px; font-weight: 700; color: var(--accent); }
-.popup-en { font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
-.popup-desc { font-size: 12px; line-height: 1.6; color: var(--text); margin-bottom: 8px; }
-.popup-routes { margin-top: 6px; }
-.popup-route-tag {
-  display: inline-block; padding: 3px 10px; margin: 2px 4px 2px 0;
-  border-radius: 12px; font-size: 11px; font-weight: 500;
-  background: rgba(201,168,76,.12); color: var(--accent);
-  border: 1px solid rgba(201,168,76,.2);
-}
+
 
 /* Custom Markers */
 .custom-marker {
@@ -273,12 +254,15 @@ body {
   }
   #sidebar:not(.open) { margin-left: -100vw; }
   #route-overlay { 
-    left: 10px; right: 10px; bottom: 10px; 
-    padding: 15px; 
+    left: 0; right: 0; bottom: 0; 
+    padding: 20px 20px 30px; 
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.6);
   }
-  #route-overlay h3 { font-size: 15px; margin-bottom: 2px; }
-  #route-overlay .overlay-en { margin-bottom: 6px; }
+  #route-overlay h3 { font-size: 16px; margin-bottom: 2px; }
+  #route-overlay .overlay-en { margin-bottom: 8px; }
   #route-overlay .route-list { max-height: 25vh; }
-  .leaflet-popup-content { margin: 10px 12px !important; }
-  .popup-desc { font-size: 11px; margin-bottom: 4px; }
 }

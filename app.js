@@ -70,27 +70,10 @@
     });
   }
 
-  function popupContent(loc) {
-    const connectedIds = getConnectedIds(loc.id);
-    const routeTags = connectedIds.map(rid => {
-      const r = getById(rid);
-      return r ? `<span class="popup-route-tag">${r.icon} ${r.name}</span>` : '';
-    }).join('');
-    return `
-      <div class="popup-title">${loc.icon} ${loc.name}</div>
-      <div class="popup-en">${loc.nameEn}</div>
-      <div class="popup-desc">${loc.desc}</div>
-      ${loc.operator ? `<div style="font-size:11px;color:#8b95a5;margin-bottom:6px">營運：${loc.operator}</div>` : ''}
-      ${connectedIds.length > 0 ? `<div style="font-size:11px;color:#c9a84c;margin-bottom:4px;font-weight:600">🔗 連通 ${connectedIds.length} 個站點</div>` : ''}
-      ${routeTags ? `<div class="popup-routes">${routeTags}</div>` : ''}
-    `;
-  }
-
   // ─── Place Markers ───
   LOCATIONS.forEach(loc => {
     const marker = L.marker([loc.lat, loc.lng], { icon: createIcon(loc) })
-      .addTo(map)
-      .bindPopup(popupContent(loc), { maxWidth: 320 });
+      .addTo(map);
 
     marker.on('click', () => {
       setActiveCard(loc.id);
@@ -145,7 +128,6 @@
         setActiveCard(loc.id);
         drawRoutes(loc.id);
         map.flyTo([loc.lat, loc.lng], 15, { duration: 0.8 });
-        markers[loc.id].openPopup();
         // On mobile close sidebar
         if (window.innerWidth <= 768) {
           document.getElementById('sidebar').classList.remove('open');
@@ -192,6 +174,7 @@
     routeContent.innerHTML = `
       <h3>${loc.icon} ${loc.name}</h3>
       <div class="overlay-en">${loc.nameEn} ${loc.operator ? '· ' + loc.operator : ''}</div>
+      <div style="font-size:12px;color:var(--text);margin-bottom:10px;line-height:1.5;">${loc.desc}</div>
       <div style="font-size:12px;color:#c9a84c;margin-bottom:8px;">🔗 連通 ${connectedIds.length} 個站點（路線已在地圖上標示）</div>
       <div class="route-list">${routeItems}</div>
     `;
